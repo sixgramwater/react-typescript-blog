@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+
+
+.header_nav{
+  padding-right: 2rem;;
+  ul {
+    list-style: none;
+    display: flex;
+    
+    li {
+      font-size: 1.12rem;
+      // padding may change depends on screen size
+      padding: 0 1rem;
+      font-weight: 500;
+      a {
+        color:  #696969;
+        text-decoration: none;
+        // text-emphasis: none;
+        transition: color 100ms ease-in-out;
+        // text-transform: none;
+        &:hover {
+          color: #000;
+          // color: $clr-primary;
+        }
+      }
+      
+      
+    }
+    // align-items: ;
+  }
+  .active {
+      // background: aqua;
+      color: $clr-primary;
+      // font-weight: 500;
+      &:hover{
+        color: $clr-primary;
+      }
+  }
+}
+
+

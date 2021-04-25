@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.searchbar {
+  height: 40px;
+  cursor: pointer;
+  .searchbar_inner {
+    border-radius: 40px;
+    height: 40px;
+    background: $clr-searchbar-bg;
+    border: 1px solid transparent;
+    padding-left: 1rem;
+    transition: border 250ms ease-in-out;
+    // cursor: pointer;
+    &:focus{
+      outline: none;
+      border: 1px solid $clr-primary;
+         
+    }
+    // &:focus-within {
+
+    // }
+  }
+}
