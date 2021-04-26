@@ -8,7 +8,10 @@ import {
   HashRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from 'react-router-dom';
+import routes from './router/index';
+import { NestedRoute } from './router';
 
 const Home = () => {
   return (
@@ -18,37 +21,32 @@ const Home = () => {
   )
 }
 
-const Blog = () => {
+const Login = () => {
   return (
     <>
-      <h1>Blog Pages</h1>
+      <h1>Login Pages</h1>
     </>
   )
 }
-const Dashboard = () => {
+const Error = () => {
   return (
     <>
-      <h1>Blog Pages</h1>
+      <h1>404 NOT FOUND</h1>
     </>
   )
 }
 
 
 function App() {
+  console.log(routes);
   return (
     <div className="App">
       <Router>
-        <Header></Header>
         <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/blog">
-            <Blog></Blog>
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard></Dashboard>
-          </Route>
+          {routes.map((route,i) =>
+            // <Route path={route.path} key={i} component={route.component}/>)
+            <NestedRoute key={i} {...route}/>)
+          }
         </Switch>
       </Router>
     </div>

@@ -1,0 +1,36 @@
+.articleWrapper {
+  background: #fff;
+  flex: 1;
+  .poster_container {
+    width: 100%;
+    position: relative;
+    // height: ;
+    img {
+      // top: 0;
+      // left: 0;
+      // right: 0;
+      // position: absolute;
+      object-fit: contain;
+      width: 100%;
+    }
+    // height: calc(width/2);
+    // height: 300px;
+    // background: lightblue;
+  }
+  .title {
+    h2 {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+  }
+}
+
+.article_content {
+  padding: 20px 45px;
+  p{
+    font-size: 1.25rem;
+  }
+  code {
+    font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
+  }
+}

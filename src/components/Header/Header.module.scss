@@ -1,6 +1,8 @@
+@import '../../styles/variables.scss';
+
 header {
   // height: 80px;
-  // background: #fff;
+  background: #fff;
   z-index: 1000;
   width: 100vw;
   display: flex;
@@ -11,7 +13,7 @@ header {
   // box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
   .header_inner {
     width: 100%;
-    max-width: 1024px;
+    max-width: $width-app;
     margin: 0 auto;
     padding: 0 1rem;
     height: 40px;
@@ -27,6 +29,12 @@ header {
       display: flex;
       align-items: center;
     }
+    @media (max-width: 1000px){
+      nav {
+        display: none;
+        // width: 0;
+      }
+    }
 
     .searchbar{
       margin-left: auto;
@@ -36,4 +44,12 @@ header {
       margin-right: auto;
     }
   }
+
+  
+  // @media (max-width: 1000px){
+  //   nav {
+  //     display: none;
+  //   }
+  // }
+
 }
