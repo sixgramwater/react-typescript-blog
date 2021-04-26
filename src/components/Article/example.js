@@ -8,7 +8,7 @@ Luckily, the browser gives us some features that the JavaScript engine itself do
 ## Make sure everything is OK
 When we invoke a function, it gets added to something called the call stack. The call stack is part of the JS engine, this isn’t browser specific. It’s a stack, meaning that it’s first in, last out (think of a pile of pancakes). When a function returns a value, it gets popped off the stack 👋
 
-\`\`\` js
+\`\`\` javascript
 const timer = () => {
   console.log('OK')
 }

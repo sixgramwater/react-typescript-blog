@@ -18,7 +18,7 @@
     // background: lightblue;
   }
   .title {
-    h2 {
+    h1 {
       font-size: 3rem;
       font-weight: 800;
     }
@@ -30,7 +30,30 @@
   p{
     font-size: 1.25rem;
   }
+
+  p+p{
+    margin-top: 20px;
+  }
+
   code {
     font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
   }
+
+  pre {
+    background: rgb(40, 44, 52);
+    color: #fff;
+    margin: 10px 0;
+    padding: 8px 15px;
+    // margin: 16px;
+    border-radius: 10px;
+  }
+  h2 {
+    padding: 20px 0;
+  }
+}
+
+.code_heightlight {
+  background: rgb(40, 44, 52);
+  color: #fff;
+
 }

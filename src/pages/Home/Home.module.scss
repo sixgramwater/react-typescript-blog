@@ -13,3 +13,9 @@
     width: 100%;
   }
 }
+
+@media (max-width: 900px) {
+  .mainWrapper {
+    padding-top: 0;
+  }
+}

@@ -7,6 +7,13 @@
 }
 
 .sidebarWrapper {
-  width: 30%;
+  width: 300px;
   
+  padding-left: 20px;
+  
+}
+@media (max-width: 1000px){
+  .sidebarWrapper{
+    display: none;
+  }
 }

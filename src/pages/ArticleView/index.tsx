@@ -8,10 +8,9 @@ const Sidebar = ()=> {
     <aside className={styles.sidebarWrapper}>
       <ul>
         {/* <li>men1</li> */}
-        {/* <li>menu1</li>
+        <li><a href="/index/article#make-sure-everything-is-ok">make sure everything is ok</a></li>
         <li>menu2</li>
         <li>menu3</li>
-        <li>menu4</li> */}
       </ul>
     </aside>
   )
