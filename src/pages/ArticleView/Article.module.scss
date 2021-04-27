@@ -7,11 +7,19 @@
 }
 
 .sidebarWrapper {
-  width: 300px;
-  
-  padding-left: 20px;
+  min-width: 280px;
   
 }
+.fixedWrapper {
+  position: fixed;
+  top: 80px;
+}
+// .sidebarWrapper {
+//   width: 300px;
+  
+//   padding-left: 20px;
+  
+// }
 @media (max-width: 1000px){
   .sidebarWrapper{
     display: none;

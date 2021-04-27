@@ -2,39 +2,43 @@ import styles from './Article.module.scss';
 import Article from '../../components/Article';
 import Sidebar from '../../components/Sidebar';
 import {markdown} from '../../assets/markdown';
-// imprt {generateSyntaxTree}
 import React from 'react';
 import { generateSyntaxTree } from '../../utils/regex';
-import useScrollPosition from '../../utils/scrollPosition';
-// const Sidebar = ()=> {
-//   return (
-//     <aside className={styles.sidebarWrapper}>
-//       <ul>
-//         {/* <li>men1</li> */}
-//         <li><a href="/index/article#make-sure-everything-is-ok">make sure everything is ok</a></li>
-//         <li>menu2</li>
-//         <li>menu3</li>
-//       </ul>
-//     </aside>
-//   )
-// }
+import useElementOnScreen from '../../utils/intersection';
+
 const syntaxTree = generateSyntaxTree(markdown);
-
+// const options = {
+  
+// }
 export default function ArticleView() {
-
-  // useScrollPosition(
-  //   ({ currPos })
-  // )
+  // let refs:any = [];
+  // let visibles:any = [];
+  // syntaxTree.forEach(h2=>{
+  //   const [ref, isVisible] = useElementOnScreen({
+  //     root: null,
+  //     rootMargin: "0px",
+  //     threshold: 1.0,
+  //   });
+  //   refs.push(ref);
+  //   visibles.push(isVisible);
+  // });
   return (
     <div className={styles.articleWrapper}>
       <Article 
         title="JavaScript Visualized: the JavaScript Engine" 
         content={markdown}
+        // refs={refs}
       />
-      <div></div>
-      <Sidebar 
-        syntaxTree={syntaxTree}
-      />
+      <div className={styles.sidebarWrapper}>
+        <div className={styles.fixedWrapper}>
+          <Sidebar 
+            syntaxTree={syntaxTree}
+            // visibles={visibles}
+          />
+        </div>
+        
+      </div>
+      
     </div>
   )
 }

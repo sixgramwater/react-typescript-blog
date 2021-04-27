@@ -7,36 +7,6 @@ import SyntaxHighlighter from 'react-syntax-highlighter'
 import {atomOneDark} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { useLocation } from 'react-router-dom';
 
-// const components = {
-//   code({node, inline, className, children, ...props}) {
-//     const match = /language-(\w+)/.exec(className || '')
-//     return !inline && match ? (
-//       <SyntaxHighlighter style={atomOneDark} language={match[1]} PreTag="pre" children={String(children).replace(/\n$/, '')} {...props} />
-//     ) : (
-//       <code className={className} {...props} />
-//     )
-//   },
-//   h2({node, children, ...props}) {
-//     return (
-//       <h2>
-//         <a href={'#'+String(children).toLowerCase().replaceAll(/\s/, "-")} type="anchor"></a>
-//         {children}
-//       </h2>
-//     )
-//   }
-// }
-
-const Sidebar = () => {
-  // const 
-  return (
-    <ul>
-      <li>
-        
-      </li>
-    </ul>
-  )
-}
-
 interface IArticle{
   title: string,
   content: string,
@@ -53,17 +23,13 @@ export default function Article({title, content}) {
     code({node, inline, className, children, ...props}) {
       const match = /language-(\w+)/.exec(className || '')
       return !inline && match ? (
-        <SyntaxHighlighter style={atomOneDark} language={match[1]} PreTag="pre" children={String(children).replace(/\n$/, '')} {...props} />
+        <SyntaxHighlighter style={atomOneDark} language={match[1]} children={String(children).replace(/\n$/, '')} {...props} />
       ) : (
         <code className={className} {...props} />
       )
     },
     h2({node, children, ...props}) {
       const anchor = String(children).toLowerCase().replaceAll(/[^\d\w]/g, "-");
-      // setAnchors(()=>{
-      //   anchors.push(anchor);
-      //   return [...anchors];
-      // })
       return (
         <h2 id={anchor}>
           {/* <a href={path_+'#'+anchor} type="anchor">content</a> */}

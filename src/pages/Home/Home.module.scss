@@ -1,6 +1,7 @@
 @import '../../styles/variables.scss';
 
 .mainWrapper {
+  // margin-top: 80px;
   padding-top: 20px;
   // margin-top: 30px;
   max-width: $width-app;
@@ -12,6 +13,12 @@
     // background: #fff;
     width: 100%;
   }
+}
+
+.headerWrapper {
+  z-index: 1000;
+  position: fixed;
+
 }
 
 @media (max-width: 900px) {
