@@ -37,7 +37,14 @@ const Sidebar = () => {
   )
 }
 
-export default function Article() {
+interface IArticle{
+  title: string,
+  content: string,
+  tags?: Array<any>,
+  author?:string,
+}
+
+export default function Article({title, content}) {
   let location = useLocation();
   let path = location.pathname;
   let path_ = path.substring(0, path.length);
@@ -59,7 +66,7 @@ export default function Article() {
       // })
       return (
         <h2 id={anchor}>
-          <a href={path_+'#'+anchor} type="anchor"></a>
+          {/* <a href={path_+'#'+anchor} type="anchor">content</a> */}
           {children}
         </h2>
       )
@@ -75,13 +82,13 @@ export default function Article() {
       </div>
       <div className={styles.article_content}>
         <div className={styles.title}>
-          <h1>JavaScript Visualized: the JavaScript Engine</h1>
+          <h1>{title}</h1>
         </div>
         <div className={styles.tags}>
           <span className={styles.tag}>Frontend</span>
           <span className={styles.tag}>React</span>
         </div>
-        <ReactMarkdown components={components as any} children={markdown}></ReactMarkdown>
+        <ReactMarkdown components={components as any} children={content}></ReactMarkdown>
       </div>
     </div>
   )
