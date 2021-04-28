@@ -1,5 +1,6 @@
 import React from 'react'
-import Header from '../../components/Header'
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import { NestedRoute } from '../../router';
 import styles from './Home.module.scss';
 
@@ -19,8 +20,8 @@ export default function Home({routes}) {
             
           )}
         </div>
-        
       </main>
+      <Footer></Footer>
         
     </>
   )
