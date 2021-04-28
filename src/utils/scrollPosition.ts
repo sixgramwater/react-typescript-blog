@@ -11,13 +11,13 @@ const getScrollPosition = ({ element, useWindow}:{element?: any, useWindow?: boo
     : { x: position.left, y: position.top }
 }
 
-interface IUseScrollPosition {
-  effect: Function,
-  deps: Array<any>,
-  element: any,
-  useWindow: boolean,
-  wait: number,
-}
+// interface IUseScrollPosition {
+//   effect: Function,
+//   deps: Array<any>,
+//   element: any,
+//   useWindow: boolean,
+//   wait: number,
+// }
 
 const useScrollPosition = (effect, deps, element, useWindow, wait) => {
   const position = useRef(getScrollPosition({ useWindow }));

@@ -16,7 +16,7 @@ export default function Home({routes}) {
           {routes.map((route, i) =>
             // <Route path={route.path} key={i} component={route.component}/>
             <NestedRoute key={i} {...route}/>
-
+            
           )}
         </div>
         

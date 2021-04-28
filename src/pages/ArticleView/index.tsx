@@ -2,26 +2,31 @@ import styles from './Article.module.scss';
 import Article from '../../components/Article';
 import Sidebar from '../../components/Sidebar';
 import {markdown} from '../../assets/markdown';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { generateSyntaxTree } from '../../utils/regex';
-import useElementOnScreen from '../../utils/intersection';
+import { FaArrowUp } from 'react-icons/fa';
+// import useElementOnScreen from '../../utils/intersection';
+import { Events, animateScroll as scroll } from 'react-scroll';
 
 const syntaxTree = generateSyntaxTree(markdown);
 // const options = {
   
 // }
 export default function ArticleView() {
-  // let refs:any = [];
-  // let visibles:any = [];
-  // syntaxTree.forEach(h2=>{
-  //   const [ref, isVisible] = useElementOnScreen({
-  //     root: null,
-  //     rootMargin: "0px",
-  //     threshold: 1.0,
-  //   });
-  //   refs.push(ref);
-  //   visibles.push(isVisible);
-  // });
+  useEffect(() => {
+    Events.scrollEvent.register('begin', function () {
+      console.log("begin", arguments);
+    });
+
+    Events.scrollEvent.register('end', function () {
+      console.log("end", arguments);
+    });
+    return () => {
+      Events.scrollEvent.remove('begin');
+      Events.scrollEvent.remove('end');
+    }
+  }, []);
+
   return (
     <div className={styles.articleWrapper}>
       <Article 
@@ -37,6 +42,9 @@ export default function ArticleView() {
           />
         </div>
         
+      </div>
+      <div className={styles.scrollBtn}>
+        <a onClick={scroll.scrollToTop}><FaArrowUp/></a>
       </div>
       
     </div>

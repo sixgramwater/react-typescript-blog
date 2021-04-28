@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import styles from './Article.module.scss';
-import {markdown} from './example';
+// import {markdown} from './example';
 import ReactMarkdown from'react-markdown';
 import SyntaxHighlighter from 'react-syntax-highlighter'
 /* Use `…/dist/cjs/…` if you’re not in ESM! */
 import {atomOneDark} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { useLocation } from 'react-router-dom';
+import { Element } from 'react-scroll';
 
 interface IArticle{
   title: string,
@@ -31,10 +32,13 @@ export default function Article({title, content}) {
     h2({node, children, ...props}) {
       const anchor = String(children).toLowerCase().replaceAll(/[^\d\w]/g, "-");
       return (
-        <h2 id={anchor}>
-          {/* <a href={path_+'#'+anchor} type="anchor">content</a> */}
-          {children}
-        </h2>
+        <Element name={anchor}>
+          <h2 id={anchor}>
+            {/* <a href={path_+'#'+anchor} type="anchor">content</a> */}
+            {children}
+          </h2>
+        </Element>
+        
       )
     }
   }
