@@ -2,6 +2,7 @@ import React from 'react'
 import NestedRoute from './NestedRoute';
 import Home from '../pages/Home'
 import ArticleView from '../pages/ArticleView';
+import ArticleList from '../components/List';
 
 const Login = () => {
   return (
@@ -44,6 +45,10 @@ const router = [
       {
         path: '/index/article',
         component: ArticleView,
+      },
+      {
+        path: '/index/list',
+        component: ArticleList,
       }
     ]
   },

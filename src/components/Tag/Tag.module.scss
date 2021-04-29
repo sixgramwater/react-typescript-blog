@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.tag {
+  display: inline-block;
+  padding: 0 5px;
+  font-size: 14px;
+  span{
+    color: $clr-text-gray;
+  }
+}

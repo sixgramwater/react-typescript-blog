@@ -1,0 +1,36 @@
+@import '../../styles/variables.scss';
+
+.itemWrapper {
+  // max-width: 00px;
+  border-radius: 6px;
+  margin: 15px 0;
+  background: #fff;
+  // padding: 15px 0;
+  .item_body{
+    padding: 16px;
+  }
+  a{
+    text-decoration: none;
+    color: $clr-text-gray;
+  }
+}
+
+.item_header{
+  color: $clr-text-gray;
+}
+
+.item_main{
+  .title {
+    padding: 10px 0;
+  }
+}
+.item_footer{
+  display: flex;
+  button {
+    margin-left: auto;
+  }
+  span{
+    
+    margin-left: auto;
+  }
+}

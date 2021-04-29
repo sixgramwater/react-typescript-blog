@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+
+.btn {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 5px 20px;
+  height: 32px;
+  border: 0px;
+  color: #fff;
+  background: $clr-primary;
+  &:hover {
+    background: $clr-primary-darker;
+  }
+  cursor: pointer;
+}
