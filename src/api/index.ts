@@ -7,4 +7,5 @@ const instance = axios.create({
 
 export default instance;
 
+export const getArticleList = (params) => axios.get(`/articles`, params)
 // export const getArticle = instance.get<string>('/test.md');

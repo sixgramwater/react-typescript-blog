@@ -2,7 +2,7 @@ import React from 'react'
 import NestedRoute from './NestedRoute';
 import Home from '../pages/Home'
 import ArticleView from '../pages/ArticleView';
-import ArticleList from '../components/List';
+import ArticleList from '../pages/ListView';
 
 const Login = () => {
   return (

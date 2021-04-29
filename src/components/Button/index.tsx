@@ -1,9 +1,14 @@
 import styles from './Button.module.scss';
-import React from 'react';
+import React, { MouseEventHandler, ReactNode } from 'react';
 
-export default function Button({children}) {
+interface IButton{
+  children: ReactNode,
+  onClick?: MouseEventHandler<HTMLButtonElement>|undefined,
+}
+
+export default function Button({children, onClick}:IButton) {
   return (
-    <button className={styles.btn}>
+    <button className={styles.btn} onClick={onClick}>
       {children}
     </button>
   )
