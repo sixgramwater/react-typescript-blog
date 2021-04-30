@@ -1,19 +1,19 @@
 import styles from './Nav.module.scss';
 
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 // import Link from './'
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 
-export default function Nav() {
-  let location  = useLocation();
+export default function Nav({vertical}) {
+  // let location  = useLocation();
   const routes = [
     {
-      to: "/",
+      to: "/index/list",
       name: 'Home',
       exact: true,
     },
     {
-      to: "/blog",
+      to: "/index/article?id=1",
       name: 'Blog',
     },
     {
@@ -21,35 +21,22 @@ export default function Nav() {
       name: 'Dashboard',
     },
   ]
-  useEffect(() => {
-    console.log(location.pathname)
-    // return () => {
-    //   cleanup
-    // }
-  }, [location])
+  
   return (
     <nav className={styles.header_nav}>
-      <ul>
+      <ul className={vertical?styles.vertical : ''}>
         {
           routes.map(({to, name, exact}, index)=> {
             return (
               <li key={index}>
                 <NavLink 
-                to={to} 
-                exact={exact?true:false}
-                activeClassName={styles.active}
-                // activeStyle={{
-                //   // fontWeight: "bold",
-                //   // color: "red"
-                //   // color: "rbg(0, 118, 255)",
-                // }}
+                  to={to} 
+                  exact={exact?true:false}
+                  activeClassName={styles.active}
+               
                 >{name}</NavLink>
               </li>
-            )
-            
-            // <li className={to===location.pathname? `${styles.active}`: ""}>
-            //   <Link to={to}>{name}</Link>
-            // </li>
+            )            
           })
         }
         {/* <li className={}><Link to="/">Home</Link></li>

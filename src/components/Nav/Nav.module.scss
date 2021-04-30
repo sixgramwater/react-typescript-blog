@@ -28,6 +28,7 @@
     }
     // align-items: ;
   }
+  
   .active {
       // background: aqua;
       color: $clr-primary;
@@ -38,4 +39,17 @@
   }
 }
 
+.vertical {
+  flex-direction: column;
+  li {
+    height: 36px;
+    // padding: 3px 15px;
+  }
+  a{
+    font-weight: 500;
+  }
+  // ul {
+  //   flex-direction: column;
+  // }
+}
 

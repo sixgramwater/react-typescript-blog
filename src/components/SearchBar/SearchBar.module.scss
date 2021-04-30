@@ -10,7 +10,7 @@
   overflow: hidden;
   padding: 0 3px;
   display: flex;
-  transition: width 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
   z-index: 1000;
   position: relative;
   &:focus-within {
@@ -29,13 +29,13 @@
   .searchbar_inner {
     // border-radius: 40px;
     // width: 0;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
     height: 36px;
     background: $clr-searchbar-bg;
     border: 1px solid transparent;
     // padding-left: 1rem;
     // transition: border 250ms ease-in-out;
-    line-height: 36px;
+    line-height: 20px;
     // cursor: pointer;
     // &:focus{
     //   outline: none;

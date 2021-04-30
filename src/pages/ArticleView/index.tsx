@@ -21,17 +21,18 @@ function useQuery() {
 export default function ArticleView() {
   const query = useQuery();
   const [content, setContent] = useState('');
+  const id = query.get("id");
   useEffect(() => {
     // console.log(query);
-    if(query.get("id")) {
-      console.log(query.get("id"));
-      axios.get('/test.md').then((res) => {
+    if(id) {
+      console.log(id);
+      axios.get('/test2.md').then((res) => {
         // console.log(res);
         setContent(res.data as any);
         syntaxTree = generateSyntaxTree(res.data);
       });
     }
-  }, [query.get("id")]);
+  }, [id]);
 
   useEffect(() => {
     Events.scrollEvent.register('begin', function () {
@@ -52,13 +53,13 @@ export default function ArticleView() {
       <Article 
         title="JavaScript Visualized: the JavaScript Engine" 
         // content={markdown}
-        content={query.get("id")? content : markdown}
+        content={id? content : markdown}
         // refs={refs}
       />
       <div className={styles.sidebarWrapper}>
         <div className={styles.fixedWrapper}>
           <Sidebar 
-            syntaxTree={ query.get("id")?generateSyntaxTree(content):syntaxTree}
+            syntaxTree={ id?generateSyntaxTree(content):syntaxTree}
             // visibles={visibles}
           />
         </div>

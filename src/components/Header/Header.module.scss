@@ -53,3 +53,27 @@ header {
   // }
 
 }
+
+.menuWrapper {
+  position: absolute;
+  height: 100%;
+  // display: flex;
+  justify-items: center;
+  padding: 9px 0;
+  margin-right: 8px;
+  display: none;
+  cursor: pointer;
+  .menu_btn{
+    color: #757575;
+    // margin-top: auto;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .menuWrapper {
+    display: block;
+    position: relative;
+  }
+  
+}

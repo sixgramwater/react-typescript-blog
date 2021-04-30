@@ -7,7 +7,7 @@ import ArticleList from '../pages/ListView';
 const Login = () => {
   return (
     <h1>Login pages</h1>
-  )
+  ) 
 }
 
 const Error = () => {
